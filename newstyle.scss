@@ -46,10 +46,6 @@ body{
     opacity:0;
     transition:opacity 0.25s linear;
 }
-.appearing{
-    opacity:1;
-    transition:opacity 0.25s linear 0.25s;
-}
 .absolute-center{
     position: absolute;
 margin:auto;
