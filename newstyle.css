@@ -1,0 +1,610 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-Aug-2016, 11:45:38 AM
+    Author     : john
+*/
+body {
+  margin: 0;
+  font-family: 'Alegreya Sans', sans-serif; }
+
+.menu-bar {
+  background-color: black;
+  height: 60px;
+  color: white;
+  z-index: 1;
+  position: fixed;
+  width: 100%; }
+
+.menu-text {
+  margin-left: 20px;
+  line-height: 60px;
+  font-size: 20px; }
+
+.right-side {
+  position: absolute;
+  font-size: 30px;
+  width: 30px;
+  right: 20px;
+  top: 15px;
+  cursor: pointer;
+  transition: opacity 0.25s linear; }
+
+.menu-btn {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.not-hidden {
+  opacity: 1;
+  transition: opacity 0.25s linear 0.25s; }
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.25s linear; }
+
+.appearing {
+  opacity: 1;
+  transition: opacity 0.25s linear 0.25s; }
+
+.absolute-center {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.list {
+  width: 100px;
+  list-style: none;
+  padding-top: 100px;
+  font-size: 25px; }
+
+.list > li {
+  padding: 10px; }
+
+.menu1 {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  top: 0px;
+  transition: visibility 0s 0.92s;
+  z-index: -1;
+  overflow: hidden; }
+
+.menu1-active {
+  visibility: visible;
+  transition: visibility 0s; }
+
+.content {
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  z-index: -2;
+  width: 100%; }
+
+.slides {
+  height: calc(100vh - 60px);
+  position: absolute;
+  width: 100%;
+  top: 60px; }
+
+.slide {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 20%;
+  left: -100%; }
+
+.down-slide {
+  position: absolute;
+  top: -100%;
+  width: 20%;
+  height: 100%;
+  left: 0; }
+
+.circle-overflow {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; }
+
+.circle-slides {
+  width: 130vmax;
+  left: calc( -1 * (130vmax - 100vw )/2);
+  height: 130vmax;
+  top: calc( -1 * (130vmax - 100vh)/2 + 30px); }
+
+.circle-slide {
+  width: 0px;
+  height: 0px;
+  padding-bottom: 0px;
+  border-radius: 50%; }
+
+.shut-slide {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 50%; }
+
+.shut-slide1 {
+  background-color: #ff1682;
+  transition: left 0.5s linear 0.2s;
+  left: -50%; }
+  .shut-slide1.active {
+    transition: left 0.5s linear;
+    left: 0; }
+
+.drop-slide {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%; }
+
+.drop-slide1 {
+  background-color: #6131d4;
+  transition: left 0.3s linear, height 0.3s linear 0.3s;
+  left: calc(100% - 70px); }
+  .drop-slide1.active {
+    height: 100vh;
+    left: 0;
+    transition: left 0.3s linear 0.3s, height 0.3s linear; }
+
+.shut-slide2 {
+  background-color: #ff1682;
+  transition: left 0.5s linear 0.2s;
+  left: 100%; }
+  .shut-slide2.active {
+    transition: left 0.5s linear;
+    left: 50%; }
+
+.shut-slide3 {
+  background-color: #af0051;
+  transition: left 0.5s linear 0.1s;
+  left: -50%; }
+  .shut-slide3.active {
+    transition: left 0.5s linear 0.1s;
+    left: 0; }
+
+.shut-slide4 {
+  background-color: #af0051;
+  transition: left 0.5s linear 0.1s;
+  left: 100%; }
+  .shut-slide4.active {
+    transition: left 0.5s linear 0.1s;
+    left: 50%; }
+
+.shut-slide5 {
+  background-color: #490022;
+  transition: left 0.5s linear;
+  left: -50%; }
+  .shut-slide5.active {
+    transition: left 0.5s linear 0.2s;
+    left: 0; }
+
+.shut-slide6 {
+  background-color: #490022;
+  transition: left 0.5s linear;
+  left: 100%; }
+  .shut-slide6.active {
+    transition: left 0.5s linear 0.2s;
+    left: 50%; }
+
+.pinch-slide {
+  position: absolute; }
+
+.pinch-slide1 {
+  background-color: rgba(102, 0, 136, 0.6);
+  transition: left 0.7s linear;
+  width: 100%;
+  height: 100vh;
+  left: -100%;
+  top: 0; }
+  .pinch-slide1.active {
+    left: 0%; }
+
+.pinch-slide2 {
+  background-color: rgba(102, 0, 136, 0.6);
+  transition: top 0.7s linear;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: -100vh; }
+  .pinch-slide2.active {
+    top: 0vh; }
+
+.pinch-slide3 {
+  background-color: rgba(102, 0, 136, 0.6);
+  transition: left 0.7s linear;
+  width: 100%;
+  height: 100vh;
+  left: 100%;
+  top: 0; }
+  .pinch-slide3.active {
+    left: 0%; }
+
+.pinch-slide4 {
+  background-color: rgba(102, 0, 136, 0.6);
+  transition: top 0.7s linear;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  top: 100vh; }
+  .pinch-slide4.active {
+    top: 0vh; }
+
+.wave-slide {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  right: calc( -100% - 100px); }
+
+.wave-slide1 {
+  background-color: #9eceff;
+  transition: right 0.45s linear 0.25s; }
+  .wave-slide1.active {
+    right: 0;
+    transition: right 0.45s linear; }
+  .wave-slide1:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 100vh solid #9eceff;
+    border-left: 100px solid transparent; }
+
+.wave-slide2 {
+  background-color: #6bb4ff;
+  transition: right 0.45s linear 0.2s; }
+  .wave-slide2.active {
+    right: 0;
+    transition: right 0.45s linear 0.05s; }
+  .wave-slide2:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 100vh solid #6bb4ff;
+    border-left: 100px solid transparent; }
+
+.wave-slide3 {
+  background-color: #389aff;
+  transition: right 0.45s linear 0.15s; }
+  .wave-slide3.active {
+    right: 0;
+    transition: right 0.45s linear 0.1s; }
+  .wave-slide3:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 100vh solid #389aff;
+    border-left: 100px solid transparent; }
+
+.wave-slide4 {
+  background-color: #0581ff;
+  transition: right 0.45s linear 0.1s; }
+  .wave-slide4.active {
+    right: 0;
+    transition: right 0.45s linear 0.15s; }
+  .wave-slide4:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 100vh solid #0581ff;
+    border-left: 100px solid transparent; }
+
+.wave-slide5 {
+  background-color: #0067d1;
+  transition: right 0.45s linear 0.05s; }
+  .wave-slide5.active {
+    right: 0;
+    transition: right 0.45s linear 0.2s; }
+  .wave-slide5:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 100vh solid #0067d1;
+    border-left: 100px solid transparent; }
+
+.wave-slide6 {
+  background-color: #004e9e;
+  transition: right 0.45s linear; }
+  .wave-slide6.active {
+    right: 0;
+    transition: right 0.45s linear 0.25s; }
+  .wave-slide6:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 100%;
+    border-top: 100vh solid #004e9e;
+    border-left: 100px solid transparent; }
+
+.thatch-slide {
+  width: 0px;
+  height: 0px;
+  position: absolute; }
+
+.thatch-slide1 {
+  background-color: rgba(111, 4, 34, 0.75);
+  transition: height 0.3s linear;
+  top: 0;
+  left: 0;
+  width: 33.33vw;
+  height: 0; }
+  .thatch-slide1.active {
+    height: 100%; }
+
+.thatch-slide2 {
+  background-color: rgba(111, 4, 34, 0.75);
+  transition: width 0.3s linear 0.35s;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 33.33vh; }
+  .thatch-slide2.active {
+    width: 100%; }
+
+.thatch-slide3 {
+  background-color: rgba(111, 4, 34, 0.75);
+  transition: height 0.3s linear 0.05s;
+  top: 0;
+  left: 33.33vw;
+  width: 33.33vw;
+  height: 0; }
+  .thatch-slide3.active {
+    height: 100%; }
+
+.thatch-slide4 {
+  background-color: rgba(111, 4, 34, 0.75);
+  transition: width 0.3s linear 0.4s;
+  top: 33.33vh;
+  left: 0;
+  width: 0;
+  height: 33.33vh; }
+  .thatch-slide4.active {
+    width: 100%; }
+
+.thatch-slide5 {
+  background-color: rgba(111, 4, 34, 0.75);
+  transition: height 0.3s linear 0.1s;
+  top: 0;
+  left: 66.66vw;
+  width: 33.33vw;
+  height: 0; }
+  .thatch-slide5.active {
+    height: 100%; }
+
+.thatch-slide6 {
+  background-color: rgba(111, 4, 34, 0.75);
+  transition: width 0.3s linear 0.45s;
+  top: 66.66vh;
+  left: 0;
+  width: 0;
+  height: 33.33vh; }
+  .thatch-slide6.active {
+    width: 100%; }
+
+.pixel-slide {
+  width: 0px;
+  height: 0px;
+  position: absolute; }
+
+.pixel-slide1 {
+  background-color: #007b88;
+  transition: left 0.4s linear;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 16.67vh; }
+  .pixel-slide1.active {
+    left: 0; }
+
+.pixel-slide2 {
+  background-color: #007b88;
+  transition: left 0.4s linear;
+  top: 16.66vh;
+  left: 100%;
+  width: 100%;
+  height: 16.66vh; }
+  .pixel-slide2.active {
+    left: 0; }
+
+.pixel-slide3 {
+  background-color: #007b88;
+  transition: left 0.4s linear;
+  top: 33.32vh;
+  left: -100%;
+  width: 100%;
+  height: 16.66vh; }
+  .pixel-slide3.active {
+    left: 0; }
+
+.pixel-slide4 {
+  background-color: #007b88;
+  transition: left 0.4s linear;
+  top: 49.98vh;
+  left: 100%;
+  width: 100%;
+  height: 16.66vh; }
+  .pixel-slide4.active {
+    left: 0; }
+
+.pixel-slide5 {
+  background-color: #007b88;
+  transition: left 0.4s linear;
+  top: 66.64vh;
+  left: -100%;
+  width: 100%;
+  height: 16.66vh; }
+  .pixel-slide5.active {
+    left: 0; }
+
+.pixel-slide6 {
+  background-color: #007b88;
+  transition: left 0.4s linear;
+  top: 83.3vh;
+  left: 100%;
+  width: 100%;
+  height: 16.66vh; }
+  .pixel-slide6.active {
+    left: 0; }
+
+.circle-slide1 {
+  background-color: #04d47d;
+  transition: padding-bottom 0.4s linear 0.32s, width 0.4s linear 0.32s; }
+  .circle-slide1.active {
+    padding-bottom: 100%;
+    width: 100%;
+    transition: padding-bottom 0.4s linear, width 0.4s linear; }
+
+.circle-slide2 {
+  background-color: #03a25f;
+  transition: padding-bottom 0.4s linear 0.24s, width 0.4s linear 0.24s; }
+  .circle-slide2.active {
+    padding-bottom: 100%;
+    width: 100%;
+    transition: padding-bottom 0.4s linear 0.08s, width 0.4s linear 0.08s; }
+
+.circle-slide3 {
+  background-color: #027042;
+  transition: padding-bottom 0.4s linear  0.16s, width 0.4s linear  0.16s; }
+  .circle-slide3.active {
+    padding-bottom: 100%;
+    width: 100%;
+    transition: padding-bottom 0.4s linear  0.16s, width 0.4s linear  0.16s; }
+
+.circle-slide4 {
+  background-color: #013e24;
+  transition: padding-bottom 0.4s linear 0.08s, width 0.4s linear 0.08s; }
+  .circle-slide4.active {
+    padding-bottom: 100%;
+    width: 100%;
+    transition: padding-bottom 0.4s linear 0.24s, width 0.4s linear 0.24s; }
+
+.circle-slide5 {
+  background-color: #000c07;
+  transition: padding-bottom 0.4s linear, width 0.4s linear; }
+  .circle-slide5.active {
+    padding-bottom: 100%;
+    width: 100%;
+    transition: padding-bottom 0.4s linear 0.32s, width 0.4s linear 0.32s; }
+
+.down-slide1 {
+  background-color: #e47e00;
+  transition: top 0.4s linear; }
+
+.down-slide2 {
+  background-color: #e47e00;
+  transition: top 0.4s linear 0.08s;
+  left: 20%; }
+
+.down-slide3 {
+  background-color: #e47e00;
+  transition: top 0.4s linear  0.16s;
+  left: 40%; }
+
+.down-slide4 {
+  background-color: #e47e00;
+  transition: top 0.4s linear 0.24s;
+  left: 60%; }
+
+.down-slide5 {
+  background-color: #e47e00;
+  transition: top 0.4s linear 0.32s;
+  left: 80%; }
+
+.down-slide.active {
+  top: 0; }
+
+.slide1 {
+  background-color: black;
+  transition: left 0.4s linear; }
+
+.slide2 {
+  background-color: black;
+  transition: left 0.4s linear 0.08s;
+  top: 20%; }
+
+.slide3 {
+  background-color: black;
+  transition: left 0.4s linear  0.16s;
+  top: 40%; }
+
+.slide4 {
+  background-color: black;
+  transition: left 0.4s linear 0.24s;
+  top: 60%; }
+
+.slide5 {
+  background-color: black;
+  transition: left 0.4s linear 0.32s;
+  top: 80%; }
+
+.slide.active {
+  left: 0; }
+
+.menu-list {
+  opacity: 0;
+  transition: opacity 0.2s; }
+
+.menu-list-active {
+  opacity: 1;
+  transition: opacity 0.2s 0.72s; }
+
+.content-column {
+  max-width: 320px;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px; }
+  @media (min-width: 640px) {
+    .content-column {
+      max-width: 640px; } }
+  @media (min-width: 960px) {
+    .content-column {
+      max-width: 960px; } }
+
+.tran-name {
+  float: right;
+  margin-right: 70px;
+  line-height: 60px;
+  font-size: 25px;
+  text-transform: capitalize;
+  color: #5ad0ff; }
+
+.transition-text {
+  font-size: 35px;
+  height: 35px;
+  text-align: center; }
+
+.transition-type {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  float: left;
+  margin: 10px;
+  outline: 5px black solid;
+  cursor: pointer;
+  transition: outline 0.4s, color 0.4s, background 0.4s; }
+
+.transition-type:hover {
+  outline: #5ad0ff 5px solid;
+  color: #0089c0; }
+
+.selected {
+  background: #000000;
+  color: white; }
+
+.test-box {
+  position: relative; }
+
+/*# sourceMappingURL=newstyle.css.map */

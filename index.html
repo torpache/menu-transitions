@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="menuToggle.js"></script>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="newstyle.css">
+    </head>
+    
+    <body>
+        <div class="menu-bar">
+            <span class="menu-text">Responsive Menu</span>
+            <div class="tran-name">test</div>
+            <div class="right-side">
+            <i class="fa fa-bars menu-btn not-hidden"></i>
+            <i class="fa fa-close menu-btn hidden"></i>
+            </div>
+        </div>
+        <div class="menu menu1"> 
+            
+            <div class="slides left-slides">
+            <div class="slide slide1"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+            <div class="slide slide4"></div>
+            <div class="slide slide5"></div>
+            </div>
+            
+            <div class="slides down-slides">
+            <div class="down-slide down-slide1"></div>
+            <div class="down-slide down-slide2"></div>
+            <div class="down-slide down-slide3"></div>
+            <div class="down-slide down-slide4"></div>
+            <div class="down-slide down-slide5"></div>
+            </div>
+            
+            <div class="slides circle-slides">
+            <div class="circle-slide circle-slide1 absolute-center"></div>
+            <div class="circle-slide circle-slide2 absolute-center"></div>
+            <div class="circle-slide circle-slide3 absolute-center"></div>
+            <div class="circle-slide circle-slide4 absolute-center"></div>
+            <div class="circle-slide circle-slide5 absolute-center"></div>
+            </div>
+            
+            <div class="slides pixel-slides">
+            <div class="pixel-slide pixel-slide1 "></div>
+            <div class="pixel-slide pixel-slide2 "></div>
+            <div class="pixel-slide pixel-slide3 "></div>
+            <div class="pixel-slide pixel-slide4"></div>
+            <div class="pixel-slide pixel-slide5 "></div>
+            <div class="pixel-slide pixel-slide6"></div>
+            </div>
+            
+            <div class="slides thatch-slides">
+            <div class="thatch-slide thatch-slide1 "></div>
+            <div class="thatch-slide thatch-slide2 "></div>
+            <div class="thatch-slide thatch-slide3 "></div>
+            <div class="thatch-slide thatch-slide4"></div>
+            <div class="thatch-slide thatch-slide5 "></div>
+            <div class="thatch-slide thatch-slide6"></div>
+            </div>
+            
+            <div class="slides wave-slides">
+            <div class="wave-slide wave-slide1 "></div>
+            <div class="wave-slide wave-slide2 "></div>
+            <div class="wave-slide wave-slide3 "></div>
+            <div class="wave-slide wave-slide4"></div>
+            <div class="wave-slide wave-slide5 "></div>
+            <div class="wave-slide wave-slide6"></div>
+            </div>
+            
+            <div class="slides pinch-slides">
+            <div class="pinch-slide pinch-slide1 "></div>
+            <div class="pinch-slide pinch-slide2 "></div>
+            <div class="pinch-slide pinch-slide3 "></div>
+            <div class="pinch-slide pinch-slide4"></div>
+            </div>
+            
+            <div class="slides shut-slides">
+            <div class="shut-slide shut-slide1 "></div>
+            <div class="shut-slide shut-slide2 "></div>
+            <div class="shut-slide shut-slide3 "></div>
+            <div class="shut-slide shut-slide4"></div>
+            <div class="shut-slide shut-slide5 "></div>
+            <div class="shut-slide shut-slide6"></div>
+            </div>
+            <div class="slides drop-slides">
+            <div class="drop-slide drop-slide1 "></div>
+            </div>
+            
+            <div class="menu-list">
+            <ul class="absolute-center list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+                </div>
+        </div>
+        <div class="content">
+            <div class="content-column">
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">left</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">down</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">circle</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">pixel</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">thatch</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">wave</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">pinch</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">shut</div> 
+                </div>
+                <div class="transition-type">
+                    <div class="transition-text absolute-center">drop</div> 
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+</html>
+<script>
+    //Setup of the intial values and selectors
+    var menu=document.querySelector('.right-side');
+    var nameType=document.querySelector('.tran-name');
+    var transitions=document.querySelectorAll('.transition-type');
+    var menuSlide=document.querySelector('.left-slides');
+    var menuList=document.querySelector('.menu-list');
+    nameType.innerHTML='left';
+    var toggler=menuToggle(menu,menuSlide,menuList,transitions,nameType);
+    
+    
+    
+</script>
