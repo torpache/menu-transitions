@@ -1,29 +1,29 @@
 
-function menuToggle(MenuBtn,Menu,MenuList,Transitions,NameType){
+function menuToggle(MenuBtn,MenuSlides,MenuList,Transitions,NameType){
     var menubtn=MenuBtn;
-    var menu=Menu;
+    var menuSlides=MenuSlides;
     var menuList=MenuList;
-    transitions=Transitions;
-    nameType=NameType;
+    var transitions=Transitions;
+    var nameType=NameType;
     var open =menubtn.children[0];
     var close=menubtn.children[1];
-    var setConstants=function(Menu,MenuList){
-    menu=Menu;
+    var setConstants=function(MenuSlides,MenuList){
+    menuSlides=MenuSlides;
     menuList=MenuList;
     }
-    var slides=function(menu,menuList){
-        var menuHolder=menu.parentElement;
-        if(menu.firstElementChild.classList.contains('active')){
+    var slides=function(menuSlides,menuList){
+        var menuHolder=menuSlides.parentElement;
+        if(menuSlides.firstElementChild.classList.contains('active')){
             menuList.classList.remove('menu-list-active');
             setTimeout(function(){
-            [].slice.call(menu.children).forEach(function(item){
+            [].slice.call(menuSlides.children).forEach(function(item){
                   item.classList.remove('active');  
             });},200);
             menuHolder.classList.remove('menu1-active');
         }
         else{
             menuHolder.classList.add('menu1-active');
-            [].slice.call(menu.children).forEach(function(item){
+            [].slice.call(menuSlides.children).forEach(function(item){
                   item.classList.add('active');  
             });
             menuList.classList.add('menu-list-active');
@@ -42,19 +42,22 @@ function menuToggle(MenuBtn,Menu,MenuList,Transitions,NameType){
             open.classList.remove('hidden');
             open.classList.add('not-hidden');
         }
-        slides(menu,menuList);
+        slides(menuSlides,menuList);
     };
+    //forEach function for HMTLNodes
      var forEach = function (array, callback, scope) {
         for (var i = 0; i < array.length; i++) {
         callback.call(scope, i, array[i]); 
       }
     };
+    //add/remove active class from transition type
     var addSelected=function(list,selected,className){
         forEach(list,function(index,item){
             item.classList.remove(className);
         });
         selected.classList.add(className);
     };
+    //set up event listeners to change transition animation
     var transitionSelect=function(transitions,nameType){
         forEach(transitions,function(index,item){
         item.addEventListener('click',function(e){

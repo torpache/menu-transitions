@@ -87,6 +87,19 @@ bottom:0;
     z-index:-2;
     width:100%;
 }
+.transition-header {
+    text-align: center;
+    margin: 50px 0px;
+    font-size: 30px;
+    position: relative;
+    @media(min-width: 640px){
+    font-size:50px;
+    }
+    @media(min-width: 960px){
+    font-size:60px;
+    }
+    
+}
 .slides{
     height: calc(100vh - 60px);
         position: absolute;
